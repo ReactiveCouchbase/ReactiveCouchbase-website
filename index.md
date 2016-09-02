@@ -261,7 +261,7 @@ You can also find starter kits to quickly bootstrap projects
 * <a href="https://github.com/ReactiveCouchbase/reactivecouchbase-starter-kit">Pure Scala starter kit</a>
 * <a href="https://github.com/ReactiveCouchbase/play-java-starter-kit">Play Java starter kit</a>
 * <a href="https://github.com/ReactiveCouchbase/play-scala-starter-kit">Play Scala starter kit</a>
-* <a href="https://github.com/ReactiveCouchbase/play-scrud-starter-kit">Pure Scala CRUD starter kit</a>
+* <a href="https://github.com/ReactiveCouchbase/play-crud-starter-kit">Pure Scala CRUD starter kit</a>
 * <a href="https://github.com/arcane86/ReactiveCouchbase-SecureSocial-Sample">SecureSocial sample using Play</a> by <a href="https://github.com/arcane86">arcane86</a>
 
 Projects
