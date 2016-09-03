@@ -30,7 +30,10 @@ We assume that you got a running Couchbase instance. If not, get the latest Couc
 ReactiveCouchbase is available on a private Maven repository. If you use SBT, you just have to edit build.sbt and add the following
 
 ```scala
-resolvers += "ReactiveCouchbase Releases" at "https://raw.github.com/ReactiveCouchbase/repository/master/releases/"
+resolvers ++= Seq(
+  "ReactiveCouchbase Releases" at "https://raw.github.com/ReactiveCouchbase/repository/master/releases/",
+  "Typesafe Releases"          at "http://repo.typesafe.com/typesafe/releases/"
+)
  
 libraryDependencies ++= Seq(
   "org.reactivecouchbase" %% "reactivecouchbase-core" % "0.3"
