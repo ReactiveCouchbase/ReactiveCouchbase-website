@@ -92,7 +92,8 @@ import play.api.Configuration
 import org.reactivecouchbase.scaladsl._
 
 @Singleton
-class Couchbase @Inject()(configuration: Configuration, lifecycle: ApplicationLifecycle) {
+class Couchbase @Inject()(configuration: Configuration, 
+      lifecycle: ApplicationLifecycle) {
 
   private val driver = 
       ReactiveCouchbase(configuration.underlying.getConfig("reactivecouchbase"))
