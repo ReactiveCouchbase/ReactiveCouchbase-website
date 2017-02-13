@@ -128,11 +128,9 @@ class ApiController @Inject()(couchbase: Couchbase)
 
 # Projects
 
-### reactivecouchbase-core
+The core of ReactiveCouchbase is available on Gihtub and depends on Play JSON library and Akka Streams
 
-The core of ReactiveCouchbase. Depends on Play JSON library and Akka Streams
-
-* <a href="https://github.com/ReactiveCouchbase/ReactiveCouchbase-rs-core">GitHub</a>
+* <a href="https://github.com/ReactiveCouchbase/ReactiveCouchbase-rs-core">ReactiveCouchbase project on GitHub</a>
 
 # Community
 
