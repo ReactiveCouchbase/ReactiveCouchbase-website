@@ -93,7 +93,8 @@ import org.reactivecouchbase.scaladsl._
 @Singleton
 class Couchbase @Inject()(configuration: Configuration, lifecycle: ApplicationLifecycle) {
 
-  private val driver = ReactiveCouchbase(configuration.underlying.getConfig("reactivecouchbase"))
+  private val driver = 
+      ReactiveCouchbase(configuration.underlying.getConfig("reactivecouchbase"))
 
   def bucket(name: String): Bucket = driver.bucket(name)
 
