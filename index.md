@@ -108,13 +108,16 @@ import akka.stream.Materializer
 import play.api.libs.json._
 
 @Singleton
-class ApiController @Inject()(couchbase: Couchbase)(implicit ec: ExecutionContext, materializer: Materializer) extends Controller {
+class ApiController @Inject()(couchbase: Couchbase)
+    (implicit ec: ExecutionContext, materializer: Materializer) extends Controller {
 
   def eventsBucket = couchbase.bucket("events")
 
   def events(filter: Option[String] = None) = Action {
     val source = eventsBucket
-      .search(N1qlQuery("select id, payload, date, params, type from events where type = $type")
+      .search(N1qlQuery(
+        "select id, payload, date, params, type from events where type = $type"
+      )
       .on(Json.obj("type" -> filter.getOrElse("doc")))
       .asSource
       .map(Json.stringify)
