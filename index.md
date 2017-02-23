@@ -129,7 +129,8 @@ class ApiController @Inject()(couchbase: Couchbase)
       .on(Json.obj("type" -> filter.getOrElse("doc")))
       .asSource
       .map(Json.stringify)
-    Ok.chunked(source.intersperse("[", ",", "]")).as("application/json")
+      .intersperse("[", ",", "]")
+    Ok.chunked(source).as("application/json")
   }
 }
 ```
