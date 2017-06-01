@@ -9,7 +9,13 @@ ReactiveCouchbase is a scala driver that provides non-blocking and asynchronous 
 
 # Work in progress
  
-ReactiveCouchbase RS (**ReactiveStreams edition**) is currently **under heavy development**. There is no binary available yet, but you can build the driver on your machine to try it :
+ReactiveCouchbase RS (**ReactiveStreams edition**) is currently **under heavy development**. If you want to try it, add a resolver to your `build.sbt` file
+
+```scala
+resolvers += "reactivecouchbase" at "https://raw.github.com/ReactiveCouchbase/reactivecouchbase-rs-core/master/repository/snapshots"
+```
+
+or you can build it to get the nice goodies
 
 ```sh
 git clone https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core.git
@@ -17,11 +23,13 @@ cd reactivecouchbase-rs-core
 sbt ';clean;compile;publish-local'
 ```
 
-then in your project add the dependency
+then in your project add the following dependency
 
-```scala
+```
 libraryDependencies += "org.reactivecouchbase" % "reactivecouchbase-rs-core" % "2.0.0-SNAPSHOT"
 ```
+
+and you're ready to go
 
 If you encounter any issue during build or usage, just <a target="_blank" href="https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/issues">let me know</a>.
 
