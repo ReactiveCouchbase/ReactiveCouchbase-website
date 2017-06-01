@@ -3,13 +3,13 @@ layout: home
 title: ReactiveCouchbase
 ---
 
-# About ReactiveCouchbase  
+# About ReactiveCouchbase
 
 ReactiveCouchbase is a scala driver that provides non-blocking and asynchronous I/O operations on top of <a href="http://www.couchbase.com" target="_blank">Couchbase</a>. ReactiveCouchbase is designed to avoid blocking on each database operations. Every operation returns immediately, using the elegant <a href="http://www.scala-lang.org/api/current/#scala.concurrent.Future" target="_blank">Scala Future API</a> to resume execution when it's over. With this driver, accessing the database is not an issue for performance anymore. ReactiveCouchbase is also highly focused on streaming data in and out from your Couchbase servers using the very nice <a href="http://www.reactive-streams.org/" target="_blank">ReactiveStreams</a> on top of <a href="http://doc.akka.io/docs/akka/2.4/scala/stream/index.html" target="_blank">Akka Streams</a>.
 
 # Work in progress
  
-ReactiveCouchbase v2 (**ReactiveStreams edition**) is currently **under heavy development**. There is no binary available yet, but you can build the driver on your machine to try it :
+ReactiveCouchbase RS (**ReactiveStreams edition**) is currently **under heavy development**. There is no binary available yet, but you can build the driver on your machine to try it :
 
 ```sh
 git clone https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core.git
@@ -137,9 +137,9 @@ class ApiController @Inject()(couchbase: Couchbase)
 
 # Projects
 
-The core of ReactiveCouchbase is available on Gihtub and depends on Play Json library and Akka Streams
+The core of ReactiveCouchbase RS is available on Gihtub and depends on Play Json library and Akka Streams
 
-* <a href="https://github.com/ReactiveCouchbase/ReactiveCouchbase-rs-core" target="_blank">ReactiveCouchbase project on GitHub</a>
+* <a href="https://github.com/ReactiveCouchbase/ReactiveCouchbase-rs-core" target="_blank">ReactiveCouchbase RS project on GitHub</a>
 
 # Community
 
