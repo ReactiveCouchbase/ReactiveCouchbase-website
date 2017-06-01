@@ -20,7 +20,7 @@ sbt ';clean;compile;publish-local'
 then in your project add the dependency
 
 ```scala
-libraryDependencies += "org.reactivecouchbase" % "reactivecouchbase-core" % "2.0.0-SNAPSHOT"
+libraryDependencies += "org.reactivecouchbase" % "reactivecouchbase-rs-core" % "2.0.0-SNAPSHOT"
 ```
 
 If you encounter any issue during build or usage, just <a target="_blank" href="https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/issues">let me know</a>.
@@ -31,7 +31,7 @@ If you encounter any issue during build or usage, just <a target="_blank" href="
 import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
 import com.typesafe.config.ConfigFactory
-import org.reactivecouchbase.scaladsl.{N1qlQuery, ReactiveCouchbase}
+import org.reactivecouchbase.rs.scaladsl.{N1qlQuery, ReactiveCouchbase}
 import play.api.libs.json.Json
 import akka.stream.scaladsl.Sink
 import akka.actor.ActorSystem
@@ -89,7 +89,7 @@ I don't think you actually need a plugin, if you want to use it from Play Framew
 import javax.inject._
 import play.api.inject.ApplicationLifecycle
 import play.api.Configuration
-import org.reactivecouchbase.scaladsl._
+import org.reactivecouchbase.rs.scaladsl._
 
 @Singleton
 class Couchbase @Inject()(configuration: Configuration, 
@@ -137,7 +137,7 @@ class ApiController @Inject()(couchbase: Couchbase)
 
 # Projects
 
-The core of ReactiveCouchbase is available on Gihtub and depends on Play JSON library and Akka Streams
+The core of ReactiveCouchbase is available on Gihtub and depends on Play Json library and Akka Streams
 
 * <a href="https://github.com/ReactiveCouchbase/ReactiveCouchbase-rs-core" target="_blank">ReactiveCouchbase project on GitHub</a>
 
