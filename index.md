@@ -25,7 +25,7 @@ sbt ';clean;compile;publish-local'
 
 then in your project add the following dependency
 
-```
+```scala
 libraryDependencies += "org.reactivecouchbase" % "reactivecouchbase-rs-core" % "2.0.0-SNAPSHOT"
 ```
 
