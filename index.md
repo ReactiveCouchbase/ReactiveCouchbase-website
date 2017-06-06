@@ -12,7 +12,9 @@ ReactiveCouchbase is a scala driver that provides non-blocking and asynchronous 
 ReactiveCouchbase RS (**ReactiveStreams edition**) is currently **under heavy development**. If you want to try it, add a resolver to your `build.sbt` file
 
 ```scala
-resolvers += "reactivecouchbase" at "https://raw.github.com/ReactiveCouchbase/reactivecouchbase-rs-core/master/repository/snapshots"
+resolvers += "reactivecouchbase-rs-snapshots" at "https://raw.github.com/ReactiveCouchbase/reactivecouchbase-rs-core/master/repository/snapshots"
+
+resolvers += "reactivecouchbase-rs-releases" at "https://raw.github.com/ReactiveCouchbase/reactivecouchbase-rs-core/master/repository/releases"
 ```
 
 or you can build it to get the nice goodies
@@ -40,6 +42,7 @@ import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
 import com.typesafe.config.ConfigFactory
 import org.reactivecouchbase.rs.scaladsl.{N1qlQuery, ReactiveCouchbase}
+import org.reactivecouchbase.rs.scaladsl.json._
 import play.api.libs.json.Json
 import akka.stream.scaladsl.Sink
 import akka.actor.ActorSystem
@@ -119,6 +122,7 @@ so you can define a controller like the following
 ```scala
 import javax.inject._
 import scala.concurrent.ExecutionContext
+import org.reactivecouchbase.rs.scaladsl.json._
 import play.api.mvc._
 import akka.stream.Materializer
 import play.api.libs.json._
