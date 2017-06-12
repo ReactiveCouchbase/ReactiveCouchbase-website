@@ -43,7 +43,7 @@ import akka.stream.ActorMaterializer
 import com.typesafe.config.ConfigFactory
 import org.reactivecouchbase.rs.scaladsl.{N1qlQuery, ReactiveCouchbase}
 import org.reactivecouchbase.rs.scaladsl.json._
-import play.api.libs.json.Json
+import play.api.libs.json._
 import akka.stream.scaladsl.Sink
 import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
@@ -69,13 +69,13 @@ object ReactiveCouchbaseTest extends App {
   val bucket = driver.bucket("default")
 
   val future = for {
-    _        <- bucket.insert("key1", 
+    _        <- bucket.insert[JsValue]("key1", 
                   Json.obj("message" -> "Hello World", "type" -> "doc"))
     doc      <- bucket.get("key1")
     exists   <- bucket.exists("key1")
     docs     <- bucket.search(
                     N1qlQuery("select message from default where type = $type")
-                  .on(Json.obj("type" -> "doc")))
+                  .on(Json.obj("type" -> "doc")).asQueryParams)
                   .asSeq
     messages <- bucket.search(
                     N1qlQuery("select message from default where type = 'doc'"))
@@ -138,7 +138,7 @@ class ApiController @Inject()(couchbase: Couchbase)
       .search(N1qlQuery(
         "select id, payload, date, params, type from events where type = $type"
       )
-      .on(Json.obj("type" -> filter.getOrElse("doc")))
+      .on(Json.obj("type" -> filter.getOrElse("doc")).asQueryParams)
       .asSource
       .map(Json.stringify)
       .intersperse("[", ",", "]")
