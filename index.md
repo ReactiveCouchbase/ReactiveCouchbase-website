@@ -28,7 +28,13 @@ sbt ';clean;compile;publish-local'
 then in your project add the following dependency
 
 ```scala
-libraryDependencies += "org.reactivecouchbase" %% "reactivecouchbase-rs-core" % "1.0.0-SNAPSHOT"
+libraryDependencies += "org.reactivecouchbase" %% "reactivecouchbase-rs-core" % "1.0.0"
+```
+
+or the latest snpashot
+
+```scala
+libraryDependencies += "org.reactivecouchbase" %% "reactivecouchbase-rs-core" % "1.0.1-SNAPSHOT"
 ```
 
 and you're ready to go
@@ -180,9 +186,9 @@ case class JsonObjQueryParams(query: JsonObj = ByteString.empty) extends QueryPa
 
 You have a few examples at
 
-* https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/blob/master/src/main/scala/org/reactivecouchbase/rs/scaladsl/json/package.scala
-* https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/blob/master/src/main/scala/org/reactivecouchbase/rs/scaladsl/json/bytestring.scala 
-* https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/blob/master/src/main/scala/org/reactivecouchbase/rs/scaladsl/json/converter.scala#L21-L31
+* [https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/blob/master/src/main/scala/org/reactivecouchbase/rs/scaladsl/json/package.scala](https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/blob/master/src/main/scala/org/reactivecouchbase/rs/scaladsl/json/package.scala)
+* [https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/blob/master/src/main/scala/org/reactivecouchbase/rs/scaladsl/json/bytestring.scala](https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/blob/master/src/main/scala/org/reactivecouchbase/rs/scaladsl/json/bytestring.scala)
+* [https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/blob/master/src/main/scala/org/reactivecouchbase/rs/scaladsl/json/converter.scala#L21-L31](https://github.com/ReactiveCouchbase/reactivecouchbase-rs-core/blob/master/src/main/scala/org/reactivecouchbase/rs/scaladsl/json/converter.scala#L21-L31)
 
 # Projects
 
